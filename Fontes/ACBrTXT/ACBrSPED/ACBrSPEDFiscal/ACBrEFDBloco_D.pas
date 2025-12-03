@@ -158,6 +158,8 @@ type
     FRegistroD180: TRegistroD180List;
     FRegistroD190: TRegistroD190List; /// BLOCO D - Lista de RegistroD190 (FILHO)
     FRegistroD195: TRegistroD195List;
+
+    FRegistrosAdicionais: TStrings;    /// Registros customizados, filhos de C100
   public
     constructor Create(); virtual; /// Create
     destructor Destroy; override; /// Destroy
@@ -198,6 +200,8 @@ type
     property RegistroD180: TRegistroD180List read FRegistroD180 write FRegistroD180;
     property RegistroD190: TRegistroD190List read FRegistroD190 write FRegistroD190; 
     property RegistroD195: TRegistroD195List read FRegistroD195 write FRegistroD195;
+
+    property RegistrosAdicionais: TStrings read FRegistrosAdicionais;
   end;
 
   /// Registro D100 - Lista
@@ -2891,7 +2895,8 @@ begin
   FRegistroD170 := TRegistroD170List.Create;
   FRegistroD180 := TRegistroD180List.Create;
   FRegistroD190 := TRegistroD190List.Create;  /// BLOCO D - Lista de RegistroD190 (FILHO)
-  FRegistroD195 := TRegistroD195List.Create;  /// BLOCO D - Lista de RegistroD195 
+  FRegistroD195 := TRegistroD195List.Create;  /// BLOCO D - Lista de RegistroD195
+  FRegistrosAdicionais := TStringList.Create;
 end;
 
 destructor TRegistroD100.Destroy;
@@ -2906,6 +2911,7 @@ begin
   FRegistroD180.Free;
   FRegistroD190.Free;
   FRegistroD195.Free;
+  FRegistrosAdicionais.Free;
   inherited;
 end;
 
