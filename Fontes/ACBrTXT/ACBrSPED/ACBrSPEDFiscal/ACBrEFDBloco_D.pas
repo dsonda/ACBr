@@ -1645,6 +1645,7 @@ type
     FVL_SERV: Currency;        // Valor dos serviços tributados pelo ICMS
     FVL_SERV_NT: Currency;     // Valores cobrados em nome do prestador sem destaque de ICMS
     FVL_TERC: Currency;        // Valores cobrados em nome de terceiros
+    FDadosAdicionais: string;  // Dados adicionais para concatenar ao final da linha
 
     FRegistroD730: TRegistroD730List;
     FRegistroD735: TRegistroD735List;
@@ -1683,6 +1684,7 @@ type
     property NUM_DOC_REF: string read FNUM_DOC_REF write FNUM_DOC_REF;
     property MES_DOC_REF: string read FMES_DOC_REF write FMES_DOC_REF;
     property COD_MUN_DEST: String read FCOD_MUN_DEST write FCOD_MUN_DEST;
+    property DadosAdicionais: string read FDadosAdicionais write FDadosAdicionais;
 
     property RegistroD730: TRegistroD730List read FRegistroD730 write FRegistroD730;
     property RegistroD735: TRegistroD735List read FRegistroD735 write FRegistroD735;
@@ -1711,6 +1713,7 @@ type
     FVL_ICMS: Currency;     // Parcela correspondente ao "Valor do ICMS" referente à combinação CST_ICMS, CFOP, e alíquota do ICMS, incluindo o FCP, quando aplicável, referente à combinação de CST_ICMS, CFOP e alíquota do ICMS
     FVL_OPR: Currency;      // Valor da prestação correspondente à combinação de CST_ICMS, CFOP, e alíquota do ICMS, incluídas as despesas acessórias e acréscimos
     FVL_RED_BC: Currency;   // Valor não tributado em função da redução da base de cálculo do ICMS, referente à combinação de CST_ICMS, CFOP e alíquota do ICMS
+    FDadosAdicionais: string;  // Dados adicionais para concatenar ao final da linha
 
     FRegistroD731: TRegistroD731List;
   public
@@ -1725,6 +1728,7 @@ type
     property VL_ICMS: Currency read FVL_ICMS write FVL_ICMS;
     property VL_RED_BC: Currency read FVL_RED_BC write FVL_RED_BC;
     property COD_OBS: String read FCOD_OBS write FCOD_OBS;
+    property DadosAdicionais: string read FDadosAdicionais write FDadosAdicionais;
 
     property RegistroD731: TRegistroD731List read FRegistroD731 write FRegistroD731;
   end;

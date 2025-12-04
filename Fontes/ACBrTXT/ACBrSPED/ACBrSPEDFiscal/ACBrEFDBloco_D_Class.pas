@@ -2138,6 +2138,8 @@ begin
       if (FBloco_0.Registro0000.COD_VER >= vlVersao118) then
         strLinha := strLinha + LFill(wRegD700.DED, 0, 2, True);
 
+      strLinha := strLinha + wRegD700.DadosAdicionais;
+
       Add(strLinha);
 
       WriteRegistroD730(wRegD700);
@@ -2169,7 +2171,8 @@ begin
           LFill(VL_BC_ICMS, 0, 2) +
           LFill(VL_ICMS, 0, 2) +
           LFill(VL_RED_BC, 0, 2) +
-          LFill(COD_OBS));
+          LFill(COD_OBS) +
+          DadosAdicionais);
 
       WriteRegistroD731(RegD700.RegistroD730.Items[intFor]);
       RegistroD990.QTD_LIN_D := RegistroD990.QTD_LIN_D + 1;
