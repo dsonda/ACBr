@@ -2163,7 +2163,7 @@ begin
       with RegD700.RegistroD730.Items[intFor] do
         Add(LFill('D730') +
           LFill(CST_ICMS, 3) +
-          LFill(CFOP, 4) +
+          LFill(CFOP) +
           LFill(ALIQ_ICMS, 6, 2) +
           LFill(VL_OPR, 0, 2) +
           LFill(VL_BC_ICMS, 0, 2) +
