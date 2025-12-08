@@ -1649,6 +1649,8 @@ type
 
     FRegistroD730: TRegistroD730List;
     FRegistroD735: TRegistroD735List;
+
+    FRegistrosAdicionais: TStrings;    // Registros customizados
   public
     constructor Create;
     destructor Destroy; override;
@@ -1688,6 +1690,8 @@ type
 
     property RegistroD730: TRegistroD730List read FRegistroD730 write FRegistroD730;
     property RegistroD735: TRegistroD735List read FRegistroD735 write FRegistroD735;
+
+    property RegistrosAdicionais: TStrings read FRegistrosAdicionais;
   end;
 
   { TRegistroD700List }
@@ -2650,12 +2654,14 @@ constructor TRegistroD700.Create;
 begin
   FRegistroD730 := TRegistroD730List.Create;
   FRegistroD735 := TRegistroD735List.Create;
+  FRegistrosAdicionais := TStringList.Create;
 end;
 
 destructor TRegistroD700.Destroy;
 begin
   FRegistroD730.Free;
   FRegistroD735.Free;
+  FRegistrosAdicionais.Free;
   inherited Destroy;
 end;
 

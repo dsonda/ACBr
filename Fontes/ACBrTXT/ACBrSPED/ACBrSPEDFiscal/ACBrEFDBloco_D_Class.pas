@@ -156,6 +156,7 @@ type
     procedure WriteRegistroD761(RegD760: TRegistroD760);
 
     procedure WriteRegistrosAdicionaisD100(RegD100: TRegistroD100);
+    procedure WriteRegistrosAdicionaisD700(RegD700: TRegistroD700);
 
     procedure CriaRegistros;
     procedure LiberaRegistros;
@@ -2144,6 +2145,9 @@ begin
 
       WriteRegistroD730(wRegD700);
       WriteRegistroD735(wRegD700);
+
+      WriteRegistrosAdicionaisD700(wRegD700);
+
       RegistroD990.QTD_LIN_D := RegistroD990.QTD_LIN_D + 1;
     end;
   end;
@@ -2377,6 +2381,14 @@ var
 begin
   for I := 0 to RegD100.RegistrosAdicionais.Count - 1 do
     Add(RegD100.RegistrosAdicionais[I]);
+end;
+
+procedure TBloco_D.WriteRegistrosAdicionaisD700(RegD700: TRegistroD700);
+var
+  I: Integer;
+begin
+  for I := 0 to RegD700.RegistrosAdicionais.Count - 1 do
+    Add(RegD700.RegistrosAdicionais[I]);
 end;
 
 end.
